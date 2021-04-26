@@ -6,7 +6,7 @@ import ut7.agenda.modelo.*;
  */
 public class AgendaIO {
 	/**
-	 * Metodo para importar una linea de datos a la agenda
+	 * Metodo para importar una linea de datos a la agendaaaaaaaaaaaaaa
 	 * @param agenda
 	 */
 	public static void importar(AgendaContactos agenda) {
