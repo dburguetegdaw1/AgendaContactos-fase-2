@@ -1,18 +1,20 @@
-package ut7.agenda.test;
+package agenda.test;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-import ut7.agenda.modelo.*;
-import ut7.agenda.io.*;
+
+import agenda.io.*;
+import agenda.modelo.*;
 
 public class TestAgenda {
 
 	public static void main(String[] args) {
 		AgendaContactos agenda = new AgendaContactos();
-		AgendaIO.importar(agenda);
+		System.out.println(AgendaIO.importar(agenda, "agenda.csv") + " líneas erróneas");
 		System.out.println(agenda);
+		System.out.println("(" + agenda.totalContactos() + "contacto/s)");
 		separador();
-
 		buscarContactos(agenda, "acos");
 		separador();
 
@@ -30,6 +32,7 @@ public class TestAgenda {
 		separador();
 
 		personalesPorRelacion(agenda);
+		System.out.println("Exportados personales agrupados por relación");
 		separador();
 
 	}
@@ -71,9 +74,14 @@ public class TestAgenda {
 
 	}
 
+	@SuppressWarnings("static-access")
 	private static void personalesPorRelacion(AgendaContactos agenda) {
-		Map<Relacion, List<String>> map = agenda.personalesPorRelacion();
-		map.forEach((key, value) -> System.out.println(key + "\n\t" + value));
+		AgendaIO aIO = new AgendaIO();
+		try {
+			aIO.exportarContactos(agenda, "personales-relacion.txt");
+		} catch (IOException e) {
+			System.out.println("No se ha podido exportar");
+		}
 	}
 
 	private static void separador() {

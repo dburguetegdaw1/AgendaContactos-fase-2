@@ -1,9 +1,9 @@
-package ut7.agenda.test;
+package agenda.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import ut7.agenda.modelo.*;
-import ut7.agenda.io.*;
+import agenda.io.*;
+import agenda.modelo.*;
 
 public class TestProfesionalPersonal {
 
