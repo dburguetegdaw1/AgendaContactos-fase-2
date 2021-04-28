@@ -16,7 +16,7 @@ import agenda.modelo.*;
  */
 public class AgendaIO {
 	/**
-	 * Metodo para importar una linea de datos a la agendaaaaaaaaaaaaaa
+	 * Metodo para importar una linea de datos a la agenda
 	 * 
 	 * @param agenda
 	 */

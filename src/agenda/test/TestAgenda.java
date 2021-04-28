@@ -13,7 +13,7 @@ public class TestAgenda {
 		AgendaContactos agenda = new AgendaContactos();
 		System.out.println(AgendaIO.importar(agenda, "agenda.csv") + " líneas erróneas");
 		System.out.println(agenda);
-		System.out.println("(" + agenda.totalContactos() + "contacto/s)");
+		System.out.println("(" + agenda.totalContactos() + " contacto/s)");
 		separador();
 		buscarContactos(agenda, "acos");
 		separador();
