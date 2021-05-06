@@ -23,7 +23,7 @@ public class AgendaIO {
 	 */
 	public static int importar(AgendaContactos agenda, String fichero) {
 		int cant = 0;
-		BufferedReader f;
+		BufferedReader f = null;
 		try {
 			f = new BufferedReader(new FileReader(fichero));
 			String local = f.readLine();
@@ -42,6 +42,13 @@ public class AgendaIO {
 			System.out.println("Fichero no encontrado");
 		} catch (IOException e) {
 			System.out.println("No hay más líneas para leer");
+		} finally {
+			try {
+				f.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return cant;
 	}
